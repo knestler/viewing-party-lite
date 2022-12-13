@@ -2,6 +2,8 @@
 
 <p><center><%= button_to "Create New User", "/register", method: :get %><center></p>
 
+<p><center><%= link_to "Login", "/login", method: :get %><center></p>
+
 <br>
 <h3><center>Existing Users<center></h3>
 <% @users.each do |user| %>
