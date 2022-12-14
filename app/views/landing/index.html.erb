@@ -1,9 +1,11 @@
 <h1><center>Viewing Party Lite<center></h1>
+<% if session[:user_id]%>
+  <%= link_to "Logout", '/logout', method: :delete %>
+<%else %>
+  <p><center><%= button_to "Create New User", "/register", method: :get %><center></p>
 
-<p><center><%= button_to "Create New User", "/register", method: :get %><center></p>
-
-<p><center><%= link_to "Login", "/login", method: :get %><center></p>
-
+  <p><center><%= link_to "Login", "/login", method: :get %><center></p>
+<%end%>
 <br>
 <h3><center>Existing Users<center></h3>
 <% @users.each do |user| %>
